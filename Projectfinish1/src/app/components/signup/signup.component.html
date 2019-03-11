@@ -1,0 +1,33 @@
+<div class="register">
+  <h1>REGISTER</h1>
+  <mat-card class="card mat-elevation-z8">
+    <mat-card-content class="content">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+        <mat-form-field appearance="outline" class="username">
+          <mat-label>ชื่อ - สกุล</mat-label>
+          <input matInput type="text" formControlName="username" placeholder="Username" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="fullname">
+          <mat-label>ตำแหน่ง งาน</mat-label>
+          <input matInput type="text" formControlName="fullname" name="fullname" placeholder="Position" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="email">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Enter Email..." required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="password">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter Password..." required>
+        </mat-form-field>
+        <button mat-flat-button type="submit" class="button-signup" color="warn" [disabled]="this.registerForm.invalid">ลงทะเบียน</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <div style="text-align:center">
+      <img width="250" alt="Angular Logo" src="assets/images/180px-Sut_logo_Thai.svg.png">
+      <img width="500" height="200" alt="Angular Logo" src="assets/images/Untitled-15555.png">
+      <img width="350" alt="Angular Logo" src="assets/images/Untitled-1.png">
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</div>

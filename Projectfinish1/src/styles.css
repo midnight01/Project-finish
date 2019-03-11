@@ -1,0 +1,19 @@
+/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+ margin: 0;
+ /* font-family: Kanit, sans-serif; */
+}
+
+snack-bar-container.er {
+    margin-top: 10%;
+    background-color: #d42020;
+    color : rgb(252, 250, 250);
+}
+
+snack-bar-container.error {
+    margin-top: 10%;
+    background-color: #08eb13;
+    color : rgb(10, 3, 3);
+}

@@ -1,0 +1,72 @@
+<div class="container">
+    <mat-toolbar color="primary" class="mat-toolbar">
+        <button mat-icon-button style="margin-right: 10px" (click)="goHome()"><i class="material-icons">
+            keyboard_backspace
+            </i></button>
+          <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+          <span class="example-spacer"></span>
+  
+          <button  (click)="goRegister()" mat-button>
+            <h5> Log Out</h5> 
+            </button>
+            
+      </mat-toolbar>
+  
+      <mat-sidenav-container class="sidebar-container">
+        <mat-sidenav #sidenav  mode="over" class="sidebar-menu">
+            <!-- <button mat-raised-button color="primary" class="button1" (click)="goHome(); sidenav.close()"><i class="material-icons">
+              keyboard_backspace
+              </i> ถอยกลับ  </button> -->
+        </mat-sidenav>
+        <mat-sidenav-content class="mat-sidenav-content">
+            <mat-card class="example-card">
+                <mat-card-content>
+                <h1 class="ca"> การติดตามแผนการดำเนินงาน </h1>
+
+
+                <table class="qq"  border="1" align="center">
+                    <tr align="center" bgcolor="#FFCC33">
+                              <td width="90"><h2>ลำดับที่</h2></td>
+                              <td width="260"><h2>ชื่อ</h2>
+                                <h2>ผู้ประเมิน</h2></td>
+                              <td width="300"><h2>ชื่อแผน</h2></td>
+                              <td width="200" align="center"><h2>คะแนน</h2>
+                                <h2>การประเมินแผน</h2></td>
+                              <td width="248"><h2>ผู้รับผิดชอบ</h2>
+                                  <h2> /ฝ่ายรับผิดชอบ</h2></td>
+                              <td width="194"><h2>ระยะเวลา</h2>
+                                  <h2>ดำเนินการ</h2></td>
+                              <td width="148"><h2>ความคืบหน้า</h2></td>
+                              <td width="153"><h2>หมายเหตุ</h2></td>
+                            </tr>
+                            <tr align="center" valign="middle" bgcolor="#E7E7E7" *ngFor="let Course of Courses | async; let i = index">
+                                <td><h3>{{i+1}}</h3></td>
+                              <td><h3>{{item | async }}</h3></td>
+                                <td>
+                                  <!-- <ul>
+                                    <li  (click)="table(Course.date)"> -->
+                                      <h3>{{Course.measure1}}</h3>
+                              </td>
+                              <td>&nbsp;
+                              <h3>{{Course.measure}}</h3></td>
+                                <td><h3> {{Course.q.name}}</h3>
+                              </td>
+                              <td>&nbsp;
+                              <h3>{{Course.time1}} </h3>
+                              <h3>-</h3>
+                              <h3> {{Course.time2}}</h3></td>
+                              <td>&nbsp;
+                              <h3>{{Course.q.status}}</h3></td>
+                              <td><h3>{{Course.q.note}}</h3></td>
+                    </tr>
+                  </table>
+
+              </mat-card-content>
+            </mat-card>
+            
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+  </div>
+
+
+  

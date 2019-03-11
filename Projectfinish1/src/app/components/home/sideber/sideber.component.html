@@ -1,0 +1,74 @@
+
+  <mat-toolbar color="primary" class="mat-toolbar">
+        <!-- <button mat-icon-button style="margin-right: 10px" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+          <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+          <span class="example-spacer"></span>
+  
+          <button  (click)="goRegister()" mat-button>
+            <h5> Log Out</h5> 
+    </button>
+            
+      </mat-toolbar>
+  
+      <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened class="sidebar-menu">
+            <button mat-raised-button color="accent" class="button1" (click)="esc()"><i class="material-icons">
+              add
+              </i> เพิ่มข้อมูล ประเมินความเสี่ยง </button>
+            <button mat-raised-button color="warn" class="button1" (click)="input3()"><i class="material-icons">
+              create
+              </i> ประเมินความเสี่ยงตามลักษณะงาน  </button>
+            <button mat-raised-button color="warn" class="button1" (click)="input4()"><i class="material-icons">
+              create
+              </i> ประเมินความเสี่ยง พื้นที่ </button> 
+            <button mat-raised-button color="primary" class="button1" (click)="table()"><i class="material-icons">
+              assignment
+              </i> ผลประเมินความเสี่ยง </button>
+            <button mat-raised-button color="primary" class="button1" (click)="Follow3()"><i class="material-icons">
+              create
+              </i> ประเมินแผนลด/ควบคุม </button>
+            <button mat-raised-button color="primary" class="button1" (click)="Follow()"><i class="material-icons">
+              assignment
+              </i> สรุป/ติดตามแผนการดำเนินงาน </button>
+            <button mat-raised-button color="primary" class="button1" (click)="Fol()"><i class="material-icons">
+              description
+              </i> ทะเบียนความเสี่ยง</button>
+            <button mat-raised-button color="primary" class="button1" (click)="Contact()"><i class="material-icons">
+              person
+              </i> ติดต่อสอบถาม </button>
+
+    </mat-drawer>
+        <mat-drawer-content class="mat-sidenav-content">
+          <div style="text-align:center">
+            <img width="200" alt="Angular Logo" src="assets/images/180px-Sut_logo_Thai.svg.png">
+            <img width="333" height="300" alt="Angular Logo" src="assets/images/Untitled-15555.png">
+            <img width="250" alt="Angular Logo" src="assets/images/Untitled-1.png">
+          </div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <div>
+            <table width="402" border="0">
+              <tr>
+                <td width="68">&nbsp;</td>
+                <td width="24">&nbsp;</td>
+                <td width="63"><h1>&nbsp;</h1></td>
+                <td width="229"><h1>วัตถุประสงค์</h1></td>
+              </tr>
+            </table>
+        </div>
+
+            <table width="1515" border="0">
+              <tr>
+                <td width="8">&nbsp;</td>
+                <td width="8">&nbsp;</td>
+                <td width="198">&nbsp;</td>
+                <td width="1283"><h3>1. เพื่อพัฒนาฐานข้อมูลการบริหารจัดการความเสี่ยงในห้องปฏิบัติการ สอดคล้องกับ 
+                  มาตรฐาน ISO 45001 </h3>
+                  <h3>2. เพื่อทดลองการใช้งานและความสอดคล้องของฐานข้อมูลการบริหารจัดการ 
+                    ความเสี่ยงในห้องปฏิบัติการตามหลักการ ISO 45001 โดยผู้ที่ผ่านการอบรม </h3>
+                  <h3>3. เพื่อทดลองการใช้งานและประเมินความพึงพอใจของฐานข้อมูลการบริหารจัดการ 
+                ความเสี่ยงในห้องปฏิบัติการตามหลักการ ISO 45001 โดยผู้ใช้งาน </h3></td>
+              </tr>
+            </table>
+        </mat-drawer-content>
+      </mat-drawer-container>

@@ -1,0 +1,151 @@
+.example-container {
+    width: auto;
+    height: 1024px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  .register{
+    text-align: center;
+    margin: auto;
+}
+.register .card{
+    margin: auto;
+    max-width: auto;
+    border-radius: 15px;
+}
+.register .card .header{
+    text-align: center;
+}
+.register .card .header i{
+    margin: auto;
+    font-size: 100px;
+    cursor: default;
+}
+.register .card .content{
+    text-align: center;
+}
+.register .card .content .username, .fullname, .email, .password {
+    transition: ease-out 0.3s;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+.register .card .content .button-signup{
+    transition: ease-out 0.3s;
+    padding: 3px;
+    width: 50%;
+}
+
+
+@media (max-width: 768px){
+    .register{
+        margin: 15px;
+    }
+    .register h1{
+        text-align: center;
+    }
+    .register .card{
+        margin: auto;
+        max-width: 400px;
+    }
+    .register .card .content{
+        text-align: center;
+    }
+    .register .card .content .username, .fullname, .email, .password{
+        transition: ease-out 0.3s;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .register .card .content .button-signup{
+        transition: ease-out 0.3s;
+        width: 100%;
+        padding: 3px;
+    }
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+  
+
+/* 
+  555555555555555555 */
+
+  /* .example-container {
+    width: auto;
+    height: 1024px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+   */
+
+   .container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+.mat-toolbar{
+    position: initial;
+    z-index: 2;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.sidebar-container{
+    flex: 1;
+}
+.sidebar-menu{
+    width: 300px;
+}
+.mat-sidenav-content{
+    margin: 30px;
+}
+li{
+    cursor: pointer;
+}
+.button1{
+    width: 280px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 25px auto;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+.button1:hover{
+    background: Chartreuse;
+}
+.qq{
+    width: 100%;
+}
