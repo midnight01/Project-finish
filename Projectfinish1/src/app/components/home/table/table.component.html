@@ -1,0 +1,147 @@
+<div class="container">
+  <mat-toolbar color="primary" class="mat-toolbar">
+      <button mat-icon-button style="margin-right: 10px" (click)="input()"><i class="material-icons">
+          keyboard_backspace
+          </i> </button>
+        <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+        <span class="example-spacer"></span>
+
+        <button  (click)="goRegister()" mat-button>
+          <h5> Log Out</h5> 
+          </button>
+          
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidebar-container">
+      <!-- <mat-sidenav #sidenav  mode="over" class="sidebar-menu">
+          <button mat-raised-button color="primary" class="button1" (click)="input(); sidenav.close()"><i class="material-icons">
+            keyboard_backspace
+            </i> ถอยกลับ </button>
+       
+      </mat-sidenav> -->
+      <mat-sidenav-content class="mat-sidenav-content">
+          <mat-card class="example-card">
+              <mat-card-content>
+        <div class="register">
+          <h1>ผลการประเมินความเสี่ยง</h1>
+      
+            <!-- <mat-card class="card mat-elevation-z8">
+              <mat-card-content > -->
+                  <table class="qq"  border="2" >
+                      <tr bgcolor="#FFCC33">
+                        <td width="100" height="113" align="center"><h3>ลำดับที่ </h3></td>
+                        <td width="185" height="113" align="center"><h3>อาชีพ/ตำแหน่ง/พื้นที่ </h3></td>
+                        <td width="157" align="center"><h3>งานที่ได้รับผิดชอบ </h3></td>
+                        <td width="173" align="center"><h3>แหล่งกำเนิดอันตราย</h3></td>
+                        <td width="132" align="center"><h3>ใคร/อะไร ได้รับอันตราย</h3></td>
+                        <td width="367" align="center"><h3>ลักษณะอันตรายและสาเหตุของการเกิดอันตราย </h3></td>
+                        <td width="602" align="center"><h3>เกณฑ์การพิจารณาโอกาส</h3>
+                          <table width="602" height="20" border="1">
+                            <tr>
+                              <td width="56" align="center"><h4>1</h4></td>
+                              <td width="56" align="center"><h4>2</h4></td>
+                              <td width="56" align="center"><h4>3</h4></td>
+                              <td width="56" align="center"><h4>4</h4></td>
+                              <td width="56" align="center"><h4>5</h4></td>
+                              <td width="56" align="center"><h4>6</h4></td>
+                              <td width="56" align="center"><h4>7</h4></td>
+                              <td width="56" align="center"><h4>8</h4></td>
+                              <td width="56" align="center"><h4>9</h4></td>
+                              <td width="56" align="center"><h4>10</h4></td>
+                            </tr>
+                            <tr>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>2</h4></td>
+                              <td align="center"><h4>2</h4></td>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>3</h4></td>
+                              <td align="center"><h4>2</h4></td>
+                            </tr>
+                        </table></td>
+                        <td width="80" align="center"><h3>ผลรวม</h3></td>
+                        <td width="135" align="center"><h3>% โอกาส</h3></td>
+                        <td width="100" align="center" bgcolor="#FFCCCC"><h3>โอกาสที่จะเกิดอันตราย</h3>
+                          <table width="183"  border="1">
+                            <tr>
+                              <td width="52"  align="center"><h4>มาก</h4></td>
+                              <td width="79" align="center"><h4>ปานกลาง</h4></td>
+                              <td width="52" align="center"><h4>น้อย</h4></td>
+                            </tr>
+                        </table></td>
+                        <td width="40" align="center" bgcolor="#FF5F00"><h3>ระดับความรุนแรง</h3>
+                          <table width="183"  border="1">
+                            <tr>
+                              <td width="52"  align="center"><h4>มาก</h4></td>
+                              <td width="79" align="center"><h4>ปานกลาง</h4></td>
+                              <td width="52" align="center"><h4>น้อย</h4></td>
+                            </tr>
+                        </table></td>
+                        <td width="217" align="center" bgcolor="#6699FF"><h3>ระดับความเสี่ยง</h3></td>
+                        <td width="130" align="center"><h3>มาตรการ/ข้อเสนอแนะ</h3></td>
+                        <!-- <td width="206" align="center" bgcolor="#0099FF"><h3>ข้อเสนอแนะ</h3></td> -->
+                        </tr>
+                      <tr bgcolor="#E5E5E5" *ngFor="let Course of Courses | async; let i = index">
+                        <td align="center">&nbsp;
+                         <h4>{{i+1}}</h4></td>
+                        <td align="center">&nbsp;
+                        <h4>{{Course.g.career}}</h4></td>
+                        <td align="center">&nbsp;
+                        <h4>{{Course.g.work}}</h4></td>
+                        <td align="center">&nbsp;
+                        <h4>{{Course.g.danger}}</h4></td>
+                        <td align="center">&nbsp;
+                        <h4>{{Course.g.gets}}</h4></td>
+                        <td align="center">&nbsp;
+                        <h4>{{Course.g.nature}}</h4></td>
+                        <td align="center"><table width="602" border="0">
+                          <tr>
+                                <td width="56" height="34" align="center"><h4>{{Course.g.number1}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number2}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number3}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number4}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number5}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number6}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number7}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number8}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number9}}</h4></td>
+                                <td width="56" align="center"><h4>{{Course.g.number10}}</h4></td>
+                          </tr>
+                        </table></td>
+                        <td align="center"> <h4>&nbsp;{{Course.sum |number}}</h4></td>
+                          <td align="center"><h4>&nbsp;
+                                {{Course.sum3 |number}}
+                            </h4></td>
+                        <td align="center"><table width="197" border="0">
+                          <tr>
+                            <td width="52" height="34" align="center"><h4>{{Course.esc}}</h4></td>
+                            <!-- <td width="79" align="center"><h4>ปานกลาง</h4></td>
+                            <td width="52" align="center"><h4>น้อย</h4></td> -->
+                          </tr>
+                        </table></td>
+                        <td align="center"><table width="197" border="0">
+                          <tr>
+                            <td width="52" height="31" align="center"><h4>{{Course.g.violence}}</h4></td>
+                            <!-- <td width="79" align="center"><h4>ปานกลาง</h4></td>
+                            <td width="52" align="center"><h4>น้อย</h4></td> -->
+                          </tr>
+                        </table></td>
+                        <td align="center"><h4>&nbsp;{{Course.vio}}</h4></td>
+                        <td align="center"><h4>&nbsp;{{Course.g.measure}}</h4></td>
+                        <!-- <td align="center" bgcolor="#0099FF"><h4>&nbsp;</h4></td> -->
+                      </tr>
+                    </table> 
+              <!-- </mat-card-content>
+            </mat-card>
+           -->
+      
+        </div>
+      </mat-card-content>
+    </mat-card>
+    
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

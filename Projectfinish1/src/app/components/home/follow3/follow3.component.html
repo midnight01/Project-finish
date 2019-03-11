@@ -1,0 +1,56 @@
+<div class="container">
+    <mat-toolbar color="primary" class="mat-toolbar">
+        <button mat-icon-button style="margin-right: 10px" (click)="goHome()"><i class="material-icons">
+            keyboard_backspace
+            </i></button>
+          <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+          <span class="example-spacer"></span>
+  
+          <button  (click)="goRegister()" mat-button>
+            <h5> Log Out</h5> 
+            </button>
+            
+      </mat-toolbar>
+  
+      <mat-sidenav-container class="sidebar-container">
+        <mat-sidenav #sidenav  mode="over" class="sidebar-menu">
+            <!-- <button mat-raised-button color="primary" class="button1" (click)="goHome(); sidenav.close()"><i class="material-icons">
+              keyboard_backspace
+              </i> ถอยกลับ </button> -->
+
+        </mat-sidenav>
+        <mat-sidenav-content class="mat-sidenav-content">
+            <mat-card class="example-card">
+                <mat-card-content>
+
+                <h1 class="ca"> ประเมินแผนลดและแผนควบคุม </h1>
+
+                <h2 class="ca">คำชี้แจง : นำแผนที่ได้จากระดับความเสี่ยงที่ยอมรับไม่ได้ ความเสี่ยงสูง และความเสี่ยงปานกลางไปประเมินโอกาสการนำไปปรับปรุงของแผน</h2>
+                <table class="qq"  border="1" align="center">
+                    <tr align="center" bgcolor="#FFCC33">
+                      <td width="97" height="55"><h2>ลำดับที่</h2></td>
+                      <td width="271"><h2>แหล่งกำเนิดอันตราย</h2></td>
+                      <td width="233"><h2>ระดับความเสี่ยง</h2></td>
+                      <td width="388"><h2>มาตรการ/ข้อเสนอแนะ</h2></td>
+                       <td width="267"><h2>การประเมินโอกาส</h2>
+                       <h2>ความเป็นไปได้ของแผน</h2></td>
+                    </tr>
+  
+                    <tr  align="center" valign="top" bgcolor="#E7E7E7" *ngFor="let Course of Courses | async; let i = index">
+                      <td><p class="s"> {{i+1}}</p></td>
+                      <td><p class="s"> {{Course.danger}}</p></td>
+                          
+                      <td><p class="s" >  {{Course.vio }}</p></td>
+                      <td><p class="s" >  {{Course.g }}</p></td>
+                      <td>
+                       <button mat-fab color="primary" class="button111" (click)="Follow2(Course.g)"><i class="material-icons">
+                          create
+                          </i>  </button>
+                      </td>
+                      </tr>
+                  </table>
+                </mat-card-content>
+              </mat-card>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+  </div> 

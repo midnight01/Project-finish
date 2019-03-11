@@ -1,0 +1,82 @@
+<div class="container">
+  <mat-toolbar color="primary" class="mat-toolbar">
+      <!-- <button mat-icon-button style="margin-right: 10px" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+        <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+        <span class="example-spacer"></span>
+        <button  (click)="goRegister()" mat-button>
+          <h5> Log Out</h5> 
+          </button>
+          
+    </mat-toolbar>
+    <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened class="sidebar-menu">
+            <button mat-raised-button color="accent" class="button1" (click)="esac()"><i class="material-icons">
+                add
+                </i> เพิ่มข้อมูล ประเมินความเสี่ยง </button>
+              <button mat-raised-button color="warn" class="button1" (click)="input3()"><i class="material-icons">
+                create
+                </i> ประเมินความเสี่ยงตามลักษณะงาน  </button>
+              <button mat-raised-button color="warn" class="button1" (click)="input4()"><i class="material-icons">
+                create
+                </i> ประเมินความเสี่ยง พื้นที่ </button> 
+              <button mat-raised-button color="primary" class="button1" (click)="table1()"><i class="material-icons">
+                assignment
+                </i> ผลประเมินความเสี่ยง </button>
+                <button mat-raised-button color="primary" class="button1" (click)="Follow3()"><i class="material-icons">
+                    create
+                </i> ประเมินแผนลด/ควบคุม </button>
+                <button mat-raised-button color="primary" class="button1" (click)="Follow()"><i class="material-icons">
+                    assignment
+                </i> สรุป/ติดตามแผนการดำเนินงาน </button>
+              <!-- <button mat-raised-button color="primary" class="button1" (click)="Fol()"><i class="material-icons">
+                description
+                </i> ทะเบียนความเสี่ยง</button> -->
+              <button mat-raised-button color="primary" class="button1" (click)="Contact()"><i class="material-icons">
+                person
+                </i> ติดต่อสอบถาม </button>  
+            <button mat-raised-button color="primary" class="button1" (click)="input()"><i class="material-icons">
+              keyboard_backspace
+              </i> ถอยกลับ </button>
+
+    </mat-drawer>
+        <mat-drawer-content class="mat-sidenav-content">
+          <div class="register">
+              <h1>ทะเบียนความเสี่ยง</h1>
+
+              <table class="qq" border="1" align="center">
+                  <tr align="center" bgcolor="#FFCC33">
+                    <td width="56" ><h3>ลำดับที่</h3></td>
+                    <td width="190"><h3>ระดับความเสี่ยง</h3></td>
+                    <td width="200" align="center" valign="middle"><h3 _ngcontent-c12="">แหล่งกำเนิดอันตราย</h3></td>
+                    <td width="240"><h3>ลักษณะอันตรายและ</h3>
+                      <h3> สาเหตุของการเกิดอันตราย</h3></td>
+                    <td width="150"><h3 _ngcontent-c11="">วันที่</h3>
+                    <h3 _ngcontent-c11="">ประเมินความเสี่ยง</h3></td>
+                    <td width="150" align="center"><h3>ผลการ</h3>
+                    <h3> ประเมินความเสี่ยง</h3></td>
+                  </tr>
+                  <tr align="center" valign="bottom" bgcolor="#E7E7E7" *ngFor="let Course of Courses | async; let i = index">
+                      <td>
+                      <h3>{{i+1}}</h3></td>
+                      <td>
+                    <h3>{{Course.vio}}</h3></td>
+                    <td>
+                      <h3>{{Course.danger}}</h3></td>
+                      <td><h3>{{Course.nature}}</h3> </td>
+                      <td>
+                      <h3>
+                            <h3>{{Course.date}}</h3></h3></td>
+                    <td>
+                        <button mat-fab color="primary" class="button111" (click)="table(Course.date)"><i class="material-icons">
+                            description
+                            </i>  </button> 
+                  </td>
+                </tr>
+                </table>
+                
+
+            </div>
+          </mat-drawer-content>
+        </mat-drawer-container>
+</div>
+

@@ -1,0 +1,220 @@
+<div class="container">
+    <mat-toolbar color="primary" class="mat-toolbar">
+        <!-- <button mat-icon-button style="margin-right: 10px" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+          <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+          <span class="example-spacer"></span>
+          <button  (click)="goRegister()" mat-button>
+            <h5> Log Out</h5> 
+            </button>
+            
+      </mat-toolbar>
+  
+      <mat-drawer-container class="example-container">
+          <mat-drawer mode="side" opened class="sidebar-menu">
+            <button mat-raised-button color="accent" class="button1" (click)="esc()"><i class="material-icons">
+                add
+                </i> เพิ่มข้อมูล ประเมินความเสี่ยง </button>
+              <button mat-raised-button color="warn" class="button1" (click)="input3()"><i class="material-icons">
+                create
+                </i> ประเมินความเสี่ยงตามลักษณะงาน  </button>
+              <button mat-raised-button color="warn" class="button1" (click)="input4()"><i class="material-icons">
+                create
+                </i> ประเมินความเสี่ยง พื้นที่ </button> 
+              <button mat-raised-button color="primary" class="button1" (click)="table()"><i class="material-icons">
+                assignment
+                </i> ผลประเมินความเสี่ยง </button>
+              <!-- <button mat-raised-button color="primary" class="button1" (click)="Follow3()"><i class="material-icons">
+                create
+                </i> ประเมินแผนลด/ควบคุม </button> -->
+              <button mat-raised-button color="primary" class="button1" (click)="Follow()"><i class="material-icons">
+                assignment
+                </i> สรุป/ติดตามแผนการดำเนินงาน </button>
+              <button mat-raised-button color="primary" class="button1" (click)="Fol()"><i class="material-icons">
+                description
+                </i> ทะเบียนความเสี่ยง</button>
+              <button mat-raised-button color="primary" class="button1" (click)="Contact()"><i class="material-icons">
+                person
+                </i> ติดต่อสอบถาม </button>
+            <button mat-raised-button color="primary" class="button1" (click)="Follow333()"><i class="material-icons">
+              keyboard_backspace
+              </i> ถอยกลับ </button>
+
+            </mat-drawer>
+            <mat-drawer-content class="mat-sidenav-content">
+            <div class="register">
+                <h1>การประเมินโอกาสความเป็นไปได้ของแผน/การติดตามผล</h1>
+                
+                <!-- <mat-card class="card mat-elevation-z8">
+                    <mat-card-content class="content">
+                      <h2 class="co"> คำชี้แจง: กรอกระยะเวลาการดำเนินงาน และกำหนดสถานะของการดำเนินงาน รวมทั้งหมายเหตุกรณียังไม่ดำเนินการ และทำการบันทึกผล
+                        </h2> -->
+                        <mat-card class="card mat-elevation-z8">
+                            <mat-card-content class="content">
+                          <form (ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
+
+                              
+                            <h2 class="co">แผน : {{id}}</h2> 
+                            <h2 class="co">ผู้รับผิดชอบ</h2>
+                            <mat-form-field  appearance="outline"  class="name-input">
+                                <mat-label>ผู้รับผิดชอบ</mat-label>
+                             <input matInput ngModel name="name"  placeholder="ผู้รับผิดชอบ" required>
+                           </mat-form-field> 
+
+                            <h2 class="co"> ขั้นตอนที่ 1 ประเมินโอกาสการนำแผนไปปรับปรุงตามหลักการ ISO 45001 </h2>
+                            <p class="s">  คำชี้แจง : โดยพิจารณาข้อมูลจากในตาราง </p>
+                                
+                            <table width="730" border="1">
+                                <tr>
+                                  <td colspan="2" align="center" valign="top" bgcolor="#FFCC00"><h2>แผนลดและแผนควบคุม</h2></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" align="center" valign="top" bgcolor="#FFFFCC"><h2>มาตรการ/ข้อเสนอแนะ</h2></td>
+                                </tr>
+      
+                                <tr>
+                                  <td width="550" height="62" align="left" valign="middle"><h2>- เงินลงทุน </h2>
+                                  <p class="s">น้อย (1) : ใช้เงินลงทุน 400,000 บาท</p>
+                                  <p class="s">ปานกลาง (2) : ใช้เงินลงทุน 100,001-400,000 บาท</p>
+                                  <p class="s">มาก (3) : ไม่ใช้เงินลงทุนหรือเงินลงทุนไม่เกิน 100,000 บาท</p>
+                                  </td>
+                                <td width="30" align="center" valign="middle"><h3>
+                                  <mat-form-field  class="content">
+                                <mat-select placeholder="คะแนน" name="measure1" ngModel required> 
+                                              <mat-option *ngFor="let measure1 of measure1s | async" [value]="measure1" name="measure1">
+                                                <h3> {{measure1}}</h3>
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                  </h3></td>
+                                </tr>
+                                <tr>
+                                  <td height="24" align="left" valign="baseline"><h2>- การใช้เทคโนโลยีใหม่ๆ</h2>
+                                  <p class="s">น้อย (1) : สนับสนุนการปรับปรุง สมรรถนะ ด้านอาชีวอนามัยและความปลอดภัยน้อย</p>
+                                  <p class="s">ปานกลาง (2) : สนับสนุนการปรับปรุงสมรรถนะ ด้านอาชีวอนามัยและความปลอดภัย</p>
+                                  <p class="s">มาก (3) : สนับสนุนการปรับปรุง สมรรถนะ ด้านอาชีวอนามัยและความปลอดภัย</p>
+                                  </td>
+                                  <td align="center" valign="middle"><h3>
+                                    <mat-form-field  class="content">
+                                    <mat-select placeholder=" คะแนน" name="measure2" ngModel required> 
+                                              <mat-option *ngFor="let measure2 of measure2s | async" [value]="measure2" name="measure2">
+                                                <h3> {{measure2}}</h3>
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                  </h3></td>
+                                </tr>
+                                <tr>
+                                  <td height="24" align="left" valign="baseline"><h2>-<strong> ความยากง่ายในการปรับปรุง</strong></h2>
+                                  <p class="s">น้อย (1) : มีความซับซ้อนมาก</p>
+                                  <p class="s">ปานกลาง (2) : มีความซับซ้อนปานกลาง</p>
+                                  <p class="s">มาก (3) : นำไปปฏิบัติได้ง่าย</p>
+                                  </td>
+                                  <td align="center" valign="middle"><h3>
+                                    <mat-form-field  class="content">
+                                    <mat-select placeholder=" คะแนน" name="measure3" ngModel required> 
+                                              <mat-option *ngFor="let measure3 of measure3s | async" [value]="measure3" name="measure3">
+                                                <h3> {{measure3}}</h3>
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                  </h3></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" valign="baseline"><h2>- <strong>การกำจัดอันตราย</strong></h2>
+                                  <p class="s">น้อย (1) : สามารถจำกัดอันตรายได้น้อย</p>
+                                  <p class="s">ปานกลาง (2) : สามารถจำกัดอันตรายได้ปานกลาง</p>
+                                  <p class="s">มาก (3) : สามารถจำกัดอันตรายให้ หมดไปได้</p>
+                                  </td>
+                                  <td align="center" valign="middle"><h3>
+                                    <mat-form-field  class="content">
+                                    <mat-select placeholder=" คะแนน" name="measure4" ngModel required> 
+                                              <mat-option *ngFor="let measure4 of measure4s | async" [value]="measure4" name="measure4">
+                                                <h3> {{measure4}}</h3>
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                  </h3></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" valign="baseline"><h2>- <strong>การลดความเสี่ยง ด้านอาชีวอนามัยและความปลอดภัย</strong></h2>
+                                  <p class="s">น้อย (1) : สามารถลดความเสี่ยงด้านอาชีวอนามัยและความปลอดภัยให้อยู่ระดับยอมรับได้</p>
+                                  <p class="s">มาก (3) : สามารถลดความเสี่ยงด้านอาชีวอนามัยและความปลอดภัยให้อยู่ระดับเล็กน้อย</p>
+                                  </td>
+                                  <td align="center" valign="middle"><h3>
+                                    <mat-form-field  class="content">
+                                      <mat-select placeholder=" คะแนน" name="measure5" ngModel required> 
+                                              <mat-option *ngFor="let measure5 of measure5s | async" [value]="measure5" name="measure5">
+                                                <h3> {{measure5}}</h3>
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                  </h3></td>
+                                </tr>
+                                <tr>
+                                  <td height="163" align="left" valign="baseline"><h2>- <strong>กฎหมายและข้อกำหนดอื่น  ๆ</strong> </h2>
+                                    <p class="s">น้อย (1) : ยังไม่สามารถปฏิบัติได้ ถูกต้องกฎหมายและข้อ กำหนดอื่นๆทั้งหมด</p>
+                                  <p class="s">มาก (3) : สามารถปฏิบัติได้ถูกต้องกฎหมายและ ข้อกำหนดอื่นๆ</p>
+                                  </td>
+                                <td align="center" valign="middle"><h3>
+                                  <mat-form-field  class="content">
+                                <mat-select placeholder=" คะแนน" name="measure6" ngModel required> 
+                                              <mat-option *ngFor="let measure6 of measure6s | async" [value]="measure6" name="measure6">
+                                                <h3> {{measure6}}</h3>
+                                              </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                  </h3></td>
+                                </tr>
+                              </table>
+
+                            <h2 class="co"> ขั้นตอนที่ 2 </h2>
+                            <p  class="s">  คำชี้แจง : กรอกระยะเวลาการดำเนินงาน และกำหนดสถานะของการดำเนินงาน รวมทั้ง หมายเหตุกรณียังไม่ดำเนินการ และทำการบันทึกผล </p>
+
+                          <!-- <h3 class="co">ผู้รับผิดชอบ : {{item | async }}</h3>
+                          <h3 class="co">แผน : {{id}}</h3>  -->
+                          <!-- <h3 class="co">คะแนน : {{id1}}</h3> -->
+                              <h2  class="co"> ระยะเวลาการดำเนินการ</h2>
+                              <!-- <mat-form-field  class="name-input"> -->
+                               <!-- <mat-label>ระยะเวลาการดำเนินการ</mat-label> -->
+                               <mat-form-field  appearance="outline" class="name-input">
+                                  <!-- <input matInput ngModel name="time"  > -->
+                                  <input matInput ngModel name="time" [matDatepicker]="picker1" placeholder="เริ่ม" [formControl]="date" class="s"  required>
+                                  <mat-datepicker-toggle   matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                  <mat-datepicker #picker1 ></mat-datepicker>
+                                </mat-form-field>
+                                
+                                <mat-form-field  appearance="outline" class="name-input">
+                                    <!-- <input matInput ngModel name="time1" > -->
+                                  <input matInput ngModel name="time1"  [matDatepicker]="picker2" placeholder="ถึง" [formControl]="serializedDate" class="s"  required>
+                                  <mat-datepicker-toggle    matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                  <mat-datepicker #picker2 ></mat-datepicker>
+                                </mat-form-field>
+
+                                  <!-- <input matInput ngModel name="time" placeholder="ระยะเวลาการดำเนินการ" required> -->
+                              <!-- </mat-form-field>  -->
+                              <h2 class="co">สถานะ</h2>
+                              <mat-form-field  appearance="outline"  class="name-input">
+                                <mat-select placeholder="สถานะ"  name="status" ngModel required>
+                                    <mat-option *ngFor="let status of statuss | async" [value]="status" name="status">
+                                      <h3> {{status}} </h3>
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                                <h2 class="co"> หมายเหตุ </h2>
+                                <mat-form-field  appearance="outline"  class="name-input">
+                                    <mat-label>หมายเหตุ  </mat-label>
+                                 <input matInput ngModel name="note"  placeholder="หมายเหตุ" >
+                               </mat-form-field> 
+                              <button mat-flat-button type="submit" class="button-signup" color="warn" [disabled]="wikiForm.invalid"> <h2> ประเมิน </h2></button>
+                        </form>
+                      </mat-card-content>
+                    </mat-card>
+<!--                     
+                    </mat-card-content>
+                  </mat-card>
+             -->
+              </div>
+            </mat-drawer-content>
+          </mat-drawer-container>    
+  </div>
+

@@ -1,0 +1,37 @@
+<div class="login" >
+    <img width="180" alt="Angular Logo" src="assets/images/180px-Sut_logo_Thai.svg.png">
+    <img width="500" height="200" alt="Angular Logo" src="assets/images/Untitled-15555.png">
+    <img width="260" alt="Angular Logo" src="assets/images/Untitled-1.png">    
+    <p>&nbsp;</p>
+    <mat-card class="card mat-elevation-z8">
+    <mat-card-header class="header">
+      <h1> เข้าสู่ระบบ </h1>
+    </mat-card-header>
+    <mat-card-content class="content">
+      <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm)">
+        <mat-form-field appearance="outline" class="email">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" name="email" placeholder="Enter Email...">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="password" >
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" name="password" placeholder="Enter Password...">
+        </mat-form-field>
+        <button mat-flat-button type="submit" class="button-login" color="primary" [disabled]="loginForm.invalid" aria-hidden="true">Login</button>
+        <button mat-flat-button type="button" class="button-signup" color="warn" (click)="goRegister()">ลงทะเบียน</button><br>
+        <a class="ss" href="assets/images/คู่มือการใช้งาน.pdf" download>คู่มือการใช้งาน</a>
+      </form>
+    </mat-card-content>
+  </mat-card>
+    <p>&nbsp;</p>
+    <!-- <p>&nbsp;</p> -->
+  
+      <mat-card class="card mat-elevation-z8">
+          <mat-card-header class="header">
+            <h2> ดูผลประเมินความเสี่ยง </h2>
+          </mat-card-header>
+          <mat-card-content class="content">
+              <button mat-flat-button type="button" class="button-signup" color="primary" (click)="Show()"><h3> ผลประเมินความเสี่ยง </h3></button>
+          </mat-card-content>
+        </mat-card>
+    </div>

@@ -1,0 +1,132 @@
+<div class="container">
+  <mat-toolbar color="primary" class="mat-toolbar">
+      <!-- <button mat-icon-button style="margin-right: 10px" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+        <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+        <span class="example-spacer"></span>
+        <button  (click)="goRegister()" mat-button>
+          <h5> Log Out</h5> 
+          </button>
+          
+    </mat-toolbar>
+
+    <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened class="sidebar-menu">
+          <!-- <button mat-raised-button color="accent" class="button1" (click)="esac()"><i class="material-icons">
+              add
+              </i> เพิ่มข้อมูล ประเมินความเสี่ยง </button> -->
+            <button mat-raised-button color="warn" class="button1" (click)="input3()"><i class="material-icons">
+              create
+              </i> ประเมินความเสี่ยงตามลักษณะงาน  </button>
+            <button mat-raised-button color="warn" class="button1" (click)="input4()"><i class="material-icons">
+              create
+              </i> ประเมินความเสี่ยง พื้นที่ </button> 
+            <button mat-raised-button color="primary" class="button1" (click)="table()"><i class="material-icons">
+              assignment
+              </i> ผลประเมินความเสี่ยง </button>
+              <button mat-raised-button color="primary" class="button1" (click)="Follow3()"><i class="material-icons">
+                  create
+                  </i> ประเมินแผนลด/ควบคุม </button>
+                <button mat-raised-button color="primary" class="button1" (click)="Follow()"><i class="material-icons">
+                  assignment
+            </i> สรุป/ติดตามแผนการดำเนินงาน </button>
+            <button mat-raised-button color="primary" class="button1" (click)="Fol()"><i class="material-icons">
+              description
+              </i> ทะเบียนความเสี่ยง</button>
+            <button mat-raised-button color="primary" class="button1" (click)="Contact()"><i class="material-icons">
+              person
+              </i> ติดต่อสอบถาม </button>  
+          <button mat-raised-button color="primary" class="button1" (click)="input()"><i class="material-icons">
+            keyboard_backspace
+            </i> ถอยกลับ </button>
+          </mat-drawer>
+          <mat-drawer-content>
+          <div class="register">
+              <h1>เพิ่มข้อมูล ประเมินความเสี่ยง</h1>
+              
+              <mat-card class="card mat-elevation-z8">
+                  <mat-card-content class="content">
+                  <h2 class="co">ขั้นตอนที่ 1 กรณียังไม่มีข้อมูลการประเมินความเสี่ยง ให้เพิ่มข้อมูลการประเมินความเสี่ยง ดังนี้</h2>
+
+
+                      <form (ngSubmit)="addWiki1(wikiForm1)" #wikiForm1="ngForm">
+
+                            <h2  class="co">1) ตำแหน่ง</h2>
+                            <p  class="co1">คำชี้แจง : ตำแหน่งงานที่ผู้ประเมินรับผิดชอบหรือต้องการประเมิน
+                              </p>
+                            <mat-form-field appearance="outline"  class="name-input">
+                                <mat-label>ตำแหน่ง</mat-label>
+                             <input matInput ngModel name="career" placeholder="ตำแหน่ง" required>
+                           </mat-form-field> 
+
+                            <button mat-flat-button type="submit" class="button-signup" color="primary" [disabled]="wikiForm1.invalid">  บันทึกข้อมูล </button>
+                      </form>
+
+                      <form (ngSubmit)="addWiki6(wikiForm6)" #wikiForm6="ngForm">
+
+                          <h2  class="co">2) พื้นที่</h2>
+                          <p  class="co1">คำชี้แจง : พื้นที่หรือบริเวณที่ผู้ปฏิบัติงาน (หมายเลขห้อง)  </p>
+                          <mat-form-field appearance="outline"  class="name-input">
+                              <mat-label>พื้นที่</mat-label>
+                           <input matInput ngModel name="area" placeholder="พื้นที่" required>
+                         </mat-form-field> 
+ 
+                          <button mat-flat-button type="submit" class="button-signup" color="primary" [disabled]="wikiForm6.invalid">  บันทึกข้อมูล </button> 
+                    </form>
+                  
+                      <form (ngSubmit)="addWiki2(wikiForm2)" #wikiForm2="ngForm">
+
+                            <h2 class="co">3) งานที่ได้รับผิดชอบ </h2>
+                            <p  class="co1">คำชี้แจง : หน้าที่งานทั้งหมดที่ผู้ประเมินได้รับผิดชอบ </p>
+                            <mat-form-field appearance="outline"  class="name-input">
+                                <mat-label>งานที่ได้รับผิดชอบ</mat-label>
+                             <input matInput ngModel name="work" placeholder="งานที่ได้รับผิดชอบ" required>
+                           </mat-form-field> 
+ 
+                          <button mat-flat-button type="submit" class="button-signup" color="primary" [disabled]="wikiForm2.invalid">  บันทึกข้อมูล </button> 
+                    </form>
+
+                    <form (ngSubmit)="addWiki3(wikiForm3)" #wikiForm3="ngForm">
+
+                           <h2 class="co">4) แหล่งกำเนิดอันตราย </h2>
+                           <p  class="co1">
+                              คำชี้แจง : เช่น 1.ด้านกายภาพ เช่น แสง เสียง ความร้อน<br>  2.ด้านเคมี<br>  3.ด้านชีวภาพ<br>  4.ด้านการยศาสตร์ หรืออื่นๆ เช่น อุกกรณ์ เครื่องจักร ของมีคม
+                           </p>
+                           <mat-form-field appearance="outline"  class="name-input">
+                               <mat-label>แหล่งกำเนิดอันตราย</mat-label>
+                            <input matInput ngModel name="danger" placeholder="แหล่งกำเนิดอันตราย" required>
+                          </mat-form-field> 
+ 
+                          <button mat-flat-button type="submit" class="button-signup" color="primary" [disabled]="wikiForm3.invalid">  บันทึกข้อมูล </button> 
+                    </form>
+
+                    <form (ngSubmit)="addWiki4(wikiForm4)" #wikiForm4="ngForm">
+
+                          <h2 class="co">5) ใคร/อะไร ได้รับอันตราย </h2>
+                          <p  class="co1">คำชี้แจง : ผู้ที่ได้รับผลกระทบจากความเสี่ยงนี้ เช่น ผู้ปฏิบัติงาน หรือ เพื่อนร่วมงาน </p>
+                          <mat-form-field  appearance="outline" class="name-input">
+                              <mat-label>ใคร/อะไร ได้รับอันตราย</mat-label>
+                           <input matInput ngModel name="gets" placeholder="ใคร/อะไร ได้รับอันตราย" required>
+                         </mat-form-field> 
+ 
+                          <button mat-flat-button type="submit" class="button-signup" color="primary" [disabled]="wikiForm4.invalid">  บันทึกข้อมูล </button> 
+                    </form>
+
+                    <form (ngSubmit)="addWiki5(wikiForm5)" #wikiForm5="ngForm">
+
+                         <h2 class="co">6) ลักษณะอันตรายและสาเหตุของการเกิดอันตราย </h2>
+                         <p  class="co1">คำชี้แจง : ลักษณะของอันตรายจากแหล่งกำเนิดว่าจะเกิดในลักษณะไหน เช่น ไฟไหม้ ระเบิด หก รั่วไหล หรือ สาเหตุจากการเกิดอุบัติเหตุเช่น ไฟฟ้าลัดวงจร อื่นๆ เป็นต้น </p>
+                         <mat-form-field appearance="outline"  class="name-input">
+                             <mat-label>ลักษณะอันตรายและสาเหตุของการเกิดอันตราย</mat-label>
+                          <input matInput ngModel name="nature" placeholder="ลักษณะอันตรายและสาเหตุของการเกิดอันตราย" required>
+                        </mat-form-field> 
+ 
+                          <button mat-flat-button type="submit" class="button-signup" color="primary" [disabled]="wikiForm5.invalid">  บันทึกข้อมูล </button> 
+                    </form>
+                  </mat-card-content>
+                </mat-card>
+          
+            </div>
+          </mat-drawer-content>
+        </mat-drawer-container>
+</div>
+

@@ -1,0 +1,59 @@
+<div class="container">
+    <mat-toolbar color="primary" class="mat-toolbar">
+        <button mat-icon-button style="margin-right: 10px" (click)="goHome()"><i class="material-icons">
+            keyboard_backspace
+            </i></button>
+          <span> ระบบประเมินความเสี่ยง ตามหลักการ ISO 45001 </span>
+          <span class="example-spacer"></span>           
+      </mat-toolbar>
+  
+      <mat-sidenav-container class="sidebar-container">
+        <mat-sidenav #sidenav  mode="over" class="sidebar-menu">
+            <!-- <button mat-raised-button color="primary" class="button1" (click)="goHome(); sidenav.close()"><i class="material-icons">
+              keyboard_backspace
+              </i> ถอยกลับ </button> -->
+        </mat-sidenav>
+        <mat-sidenav-content class="mat-sidenav-content">
+          <!-- <div style="text-align:center">
+            <img width="250" alt="Angular Logo" src="assets/180px-Sut_logo_Thai.svg.png">
+            <p>&nbsp;</p>
+            <img width="300" alt="Angular Logo" src="assets/Untitled-2.png">
+          </div>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p> -->
+
+          <mat-card class="example-card">
+              <mat-card-content>
+                <h1 class="ca"> ผลประเมินความเสี่ยง </h1>
+              <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+              
+                  <table class="qq" border="1" align="center">
+                      <tr bgcolor="#FFCC33">
+                        <td width="127" align="center" valign="bottom"><h2>ลำดับที่</h2></td>
+                        <!-- <td width="296" align="center" valign="bottom"><h2>ผู้ประเมินความเสี่ยง</h2></td> -->
+                        <td width="394" align="center" valign="bottom"><h2>ชื่อผู้ประเมินความเสี่ยง</h2></td>
+                        <td width="296" align="center" valign="bottom"><h2>ตำแหน่ง</h2></td>
+                        <td width="350" align="center" valign="bottom"><h2>ผลการประเมินความเสี่ยง</h2></td>
+                      </tr>
+                      <tr bgcolor="#E7E7E7" *ngFor="let Course of Courses | async; let i = index">
+                          <td align="center">&nbsp;
+                              <h2>{{i+1}}</h2></td>
+                        <!-- <td>{{Course.profile.username}}</td> -->
+                        <td align="center">
+                            <h2> {{Course.profile.username}} </h2>
+                          </td>
+                          <td align="center">&nbsp;
+                            <h2> {{Course.profile.Position}}</h2></td>
+                            <td align="center">&nbsp;
+                                <button mat-fab color="primary" class="button111" (click)="table(Course.profile.uid)"><i class="material-icons">
+                                    description
+                                    </i>  </button> </td>
+                      </tr>
+                    </table>
+                    
+              </mat-card-content>
+            </mat-card>
+            
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+  </div>

@@ -1,0 +1,58 @@
+.register{
+    text-align: center;
+    margin: 15px;
+}
+.register .card{
+    margin: auto;
+    max-width: 500px;
+    border-radius: 15px;
+}
+.register .card .header{
+    text-align: center;
+}
+.register .card .header i{
+    margin: auto;
+    font-size: 100px;
+    cursor: default;
+}
+.register .card .content{
+    text-align: center;
+}
+.register .card .content .username, .fullname, .email, .password {
+    transition: ease-out 0.3s;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+.register .card .content .button-signup{
+    transition: ease-out 0.3s;
+    padding: 3px;
+    width: 50%;
+}
+
+
+@media (max-width: 768px){
+    .register{
+        margin: 15px;
+    }
+    .register h1{
+        text-align: center;
+    }
+    .register .card{
+        margin: auto;
+        max-width: 400px;
+    }
+    .register .card .content{
+        text-align: center;
+    }
+    .register .card .content .username, .fullname, .email, .password{
+        transition: ease-out 0.3s;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .register .card .content .button-signup{
+        transition: ease-out 0.3s;
+        width: 100%;
+        padding: 3px;
+    }
+}

@@ -1,0 +1,61 @@
+.login{
+    margin: 15px;
+    text-align: center;
+}
+.login .card{
+    margin: auto;
+    max-width: 400px;
+    border-radius: 15px;
+}
+/* .login .card .header{
+    text-align: center;
+} */
+/* .login .card .header i{
+    margin: auto;
+    font-size: 100px;
+    cursor: default;
+} */
+/* .login .card .content{
+    text-align: center;
+} */
+.login .card .content .email, .password{
+    transition: ease-out 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login .card .content .button-login, .button-signup{
+    transition: ease-out 0.3s;
+    padding: 3px;
+    width: 40%;
+}
+.login .card .content .button-login{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* @media (max-width: 768px){
+    .login h1{
+        text-align: center;
+    }
+    .login .card{
+        margin: auto;
+        max-width: 400px;
+    }
+    .login .card .content{
+        text-align: center;
+    }
+    .login .card .content .email, .password{
+        transition: ease-out 0.3s;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .login .card .content .button-login, .button-signup{
+        transition: ease-out 0.3s;
+        width: 100%;
+        padding: 3px;
+    }
+} */
+.ss{
+
+    font-size: 18px
+}
